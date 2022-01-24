@@ -3,13 +3,9 @@ import "./App.css";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-import {
-  RulerControl,
-  StylesControl,
-  CompassControl,
-  ZoomControl,
-} from "mapbox-gl-controls";
-import "mapbox-gl-controls/lib/controls.css";
+import MapboxDraw from "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw";
+import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+import Styles from "./components/Styles";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -22,46 +18,30 @@ class App extends React.Component {
       zoom: 12,
     });
 
-    const directions = new MapboxDirections({
+    const Directions = new MapboxDirections({
       accessToken: mapboxgl.accessToken,
       unit: "metric",
       profile: "mapbox/driving",
     });
 
+    const Draw = new MapboxDraw();
+
     // Directions
-    map.addControl(directions, "top-left");
+    map.addControl(Directions, "top-left");
 
-    // Ruler
-    map.addControl(new RulerControl(), "top-right");
+    // Draw
+    map.addControl(Draw, "top-right");
 
-    // Styles
-    map.addControl(
-      new StylesControl({
-        styles: [
-          {
-            label: "Streets",
-            styleName: "Mapbox Streets",
-            styleUrl: "mapbox://styles/mapbox/streets-v11",
-          },
-          {
-            label: "Satellite",
-            styleName: "Satellite",
-            styleUrl: "mapbox://styles/mapbox/satellite-streets-v11",
-          },
-        ],
-        onChange: (style) => console.log(style),
-      }),
-      "bottom-left"
-    );
-
-    // Compass
-    map.addControl(new CompassControl(), "top-right");
-
-    // Zoom
-    map.addControl(new ZoomControl(), "top-right");
+    // Navigation
+    map.addControl(new mapboxgl.NavigationControl());
   }
+
   render() {
-    return <div className="mapWrapper" id="map" />;
+    return (
+      <div className="mapWrapper" id="map">
+        <Styles />
+      </div>
+    );
   }
 }
 export default App;

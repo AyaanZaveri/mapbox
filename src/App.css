@@ -297,7 +297,7 @@ body {
 .mapbox-directions-profile {
   background: #fff;
   margin: 7px 0 0;
-  padding: 2px;
+  //padding: 2px;
   border-radius: 15px;
   vertical-align: middle;
 }
@@ -305,7 +305,7 @@ body {
   cursor: pointer;
   vertical-align: top;
   display: block;
-  border-radius: 16px;
+  //border-radius: 16px;
   padding: 3px 5px;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
