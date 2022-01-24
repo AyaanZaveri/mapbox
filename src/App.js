@@ -33,8 +33,6 @@ class App extends React.Component {
 
     // Ruler
     map.addControl(new RulerControl(), "top-right");
-    map.on("ruler.on", () => console.log("ruler: on"));
-    map.on("ruler.off", () => console.log("ruler: off"));
 
     // Styles
     map.addControl(
