@@ -5,7 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import MapboxDraw from "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
-import { IconTrafficLights, IconSun, IconMoon, IconWorld } from "@tabler/icons";
+import { IconTrafficLights, IconSun, IconMoon, IconWorld, Icon3dCubeSphere } from "@tabler/icons";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -106,6 +106,16 @@ const App = () => {
           onClick={() => setStyle("mapbox://styles/mapbox/satellite-streets-v11")}
         >
           <IconWorld className="inline-flex justify-center w-8/12" />
+        </button>
+
+        <button
+          className="mapboxgl-ctrl-zoom-out"
+          type="button"
+          aria-label="Zoom out"
+          aria-disabled="false"
+          onClick={() => setStyle("mapbox://styles/ayaanzaveri/ckys5rc5p0n1115pbp4vc6joa")}
+        >
+          <Icon3dCubeSphere className="inline-flex justify-center w-8/12" />
         </button>
       </div>
     </div>
