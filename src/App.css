@@ -36,6 +36,7 @@ body {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+
 .mapboxgl-ctrl-geocoder {
   font-family: "Inter", sans-serif;
   position: relative;
@@ -86,6 +87,7 @@ body {
   border: none;
   cursor: pointer;
 }
+
 .mapboxgl-ctrl-geocoder .geocoder-pin-right * {
   background-color: #fff;
   z-index: 2;
