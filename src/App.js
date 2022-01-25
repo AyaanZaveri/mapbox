@@ -40,6 +40,8 @@ const App = () => {
       profile: "mapbox/driving",
     });
 
+    const FullScreen = new mapboxgl.FullscreenControl();
+
     const Draw = new MapboxDraw();
 
     const Navigation = new mapboxgl.NavigationControl();
@@ -58,6 +60,8 @@ const App = () => {
     map.addControl(Directions, "top-left");
 
     // Full Screen
+
+    map.addControl(FullScreen);
 
     // Geolocate
     map.addControl(Geolocate);
