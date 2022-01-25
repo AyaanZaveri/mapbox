@@ -60,7 +60,6 @@ const App = () => {
     map.addControl(Directions, "top-left");
 
     // Full Screen
-
     map.addControl(FullScreen);
 
     // Geolocate
@@ -91,7 +90,7 @@ const App = () => {
         type: "fill-extrusion",
         minzoom: 15,
         paint: {
-          "fill-extrusion-color": "#aaa",
+          "fill-extrusion-color": "#ccc",
 
           // Use an 'interpolate' expression to
           // add a smooth transition effect to
