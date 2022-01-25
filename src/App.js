@@ -9,6 +9,10 @@ import { IconTrafficLights, IconSun, IconMoon, IconWorld } from "@tabler/icons";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
+/* eslint-disable import/no-webpack-loader-syntax */
+// @ts-ignore
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 const App = () => {
   const [style, setStyle] = useState("mapbox://styles/mapbox/streets-v11");
   useEffect(() => {
