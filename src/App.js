@@ -10,11 +10,11 @@ import { IconTrafficLights, IconSun, IconMoon, IconWorld } from "@tabler/icons";
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const App = () => {
-  const [style, setStyle] = useState("streets-v11");
+  const [style, setStyle] = useState("mapbox://styles/mapbox/streets-v11");
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: `mapbox://styles/mapbox/${style}`,
+      style: style,
       center: [-73.985664, 40.748514],
       zoom: 12,
     });
@@ -69,7 +69,7 @@ const App = () => {
           type="button"
           aria-label="Zoom in"
           aria-disabled="false"
-          onClick={() => setStyle("streets-v11")}
+          onClick={() => setStyle("mapbox://styles/mapbox/streets-v11")}
         >
           <IconTrafficLights className="inline-flex justify-center w-8/12" />
         </button>
@@ -79,7 +79,7 @@ const App = () => {
           type="button"
           aria-label="Zoom in"
           aria-disabled="false"
-          onClick={() => setStyle("light-v10")}
+          onClick={() => setStyle("mapbox://styles/mapbox/light-v10")}
         >
           <IconSun className="inline-flex justify-center w-8/12" />
         </button>
@@ -89,7 +89,7 @@ const App = () => {
           type="button"
           aria-label="Zoom out"
           aria-disabled="false"
-          onClick={() => setStyle("dark-v10")}
+          onClick={() => setStyle("mapbox://styles/mapbox/dark-v10")}
         >
           <IconMoon className="inline-flex justify-center w-8/12" />
         </button>
@@ -99,7 +99,7 @@ const App = () => {
           type="button"
           aria-label="Zoom out"
           aria-disabled="false"
-          onClick={() => setStyle("satellite-streets-v11")}
+          onClick={() => setStyle("mapbox://styles/mapbox/satellite-streets-v11")}
         >
           <IconWorld className="inline-flex justify-center w-8/12" />
         </button>
